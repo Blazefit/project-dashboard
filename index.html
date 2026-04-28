@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 BlazeFit Project Dashboard</title>
+<style>
+  :root {
+    --bg: #f5f5f7;
+    --surface: #ffffff;
+    --text: #1d1d1f;
+    --text2: #6e6e73;
+    --accent: #0071e3;
+    --hot: #ff3b30;
+    --warm: #ff9500;
+    --dormant: #8e8e93;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --radius: 18px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 40px 20px;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 40px; }
+  header h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; }
+  header p { color: var(--text2); margin-top: 8px; font-size: 1rem; }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    background: var(--surface);
+    padding: 16px 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    min-width: 120px;
+  }
+  .stat .num { font-size: 1.8rem; font-weight: 700; display: block; }
+  .stat .label { font-size: 0.85rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat.hot .num { color: var(--hot); }
+  .stat.warm .num { color: var(--warm); }
+  .stat.dormant .num { color: var(--dormant); }
+  .group { margin-bottom: 48px; }
+  .group h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-left: 4px;
+  }
+  .group.hot h2 { color: var(--hot); }
+  .group.warm h2 { color: var(--warm); }
+  .group.dormant h2 { color: var(--dormant); }
+  .count { color: var(--text2); font-weight: 400; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .repo-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    word-break: break-word;
+    color: var(--accent);
+  }
+  .lang {
+    font-size: 0.75rem;
+    color: var(--text2);
+    background: var(--bg);
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+  }
+  .desc {
+    font-size: 0.9rem;
+    color: var(--text2);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .meta {
+    font-size: 0.8rem;
+    color: var(--text2);
+    margin-top: auto;
+    padding-top: 8px;
+  }
+  footer {
+    text-align: center;
+    color: var(--text2);
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+  @media (max-width: 600px) {
+    header h1 { font-size: 1.6rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🔥 Project Dashboard</h1>
+      <p>BlazeFit GitHub repo tracker · 2026-04-28 10:59 ET</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat hot"><span class="num">8</span><span class="label">Hot</span></div>
+      <div class="stat warm"><span class="num">16</span><span class="label">Warm</span></div>
+      <div class="stat dormant"><span class="num">27</span><span class="label">Dormant</span></div>
+      <div class="stat"><span class="num">51</span><span class="label">Total</span></div>
+    </div>
+
+    
+    <section class="group hot">
+      <h2>🔥 Hot <span class="count">(8)</span></h2>
+      <div class="grid">
+    <a href="https://github.com/Blazefit/longhound" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 longhound</span>
+        <span class="lang">PLpgSQL</span>
+      </div>
+      <p class="desc">AI canine longevity app — peptides as hero feature, evidence-ranked supplement protocols, vet-shareable PDF logs</p>
+      <div class="meta">⭐ 2026-04-28</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/peptide-protocols" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 peptide-protocols</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc">Peptide assessment protocols, intake frameworks, and lab panels for human optimization</p>
+      <div class="meta">⭐ 2026-04-28</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/HyperliquidTradingAgent" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 HyperliquidTradingAgent</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Manual trade execution agent for Hyperliquid with bracket orders, stop-loss management, and 24/7 self-healing</p>
+      <div class="meta">⭐ 2026-04-27</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/autotradeexecute" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 autotradeexecute</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Hyperliquid manual trade executor with bracket orders, 24/7 self-healing, and full error correction documentation</p>
+      <div class="meta">⭐ 2026-04-27</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/master-trading-dashboard" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 master-trading-dashboard</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">Master trading dashboard aggregator for Signal Trader, EXP 19, covered calls, and wheel strategy.</p>
+      <div class="meta">⭐ 2026-04-24</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/master-trading-dashboard-deploy-artifacts" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 master-trading-dashboard-deploy-artifacts</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-04-22</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/signal-trader" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 signal-trader</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-04-22</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/signal-trader-daemon" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 signal-trader-daemon</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-04-22</div>
+    </a>
+</div>
+    </section>
+
+    
+    <section class="group warm">
+      <h2>🟡 Warm <span class="count">(16)</span></h2>
+      <div class="grid">
+    <a href="https://github.com/Blazefit/blazeos" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 blazeos</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">BlazeOS - Hybrid gym management platform for CrossFit Blaze Naples</p>
+      <div class="meta">⭐ 2026-04-20</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/mvp-brick" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 mvp-brick</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">MVP Brick — Multi-Vial Injection Pen Prototype (Design C: The Brick). 3-vial sliding tray magazine with isolated fluid paths and closed-loop electronic dosing.</p>
+      <div class="meta">⭐ 2026-04-19</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/michellecrm" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 michellecrm</span>
+        <span class="lang">JavaScript</span>
+      </div>
+      <p class="desc">Michelle's elevator-service CRM — contacts, pipeline, automations, Keap/Supabase sync</p>
+      <div class="meta">⭐ 2026-04-18</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/gulfshorewellnessday310" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 gulfshorewellnessday310</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Blaze Calendar and landing pages</p>
+      <div class="meta">⭐ 2026-04-18</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/ptos-hyperliquid" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 ptos-hyperliquid</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">PTOS TradingView webhook → Hyperliquid execution</p>
+      <div class="meta">⭐ 2026-04-16</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/claude-code-skills" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 claude-code-skills</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Claude Code skills — CRM expert, CRM dev, skill creator, and supporting scheduled tasks</p>
+      <div class="meta">⭐ 2026-04-16</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/InvestAnswers-Forum-Archive" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 InvestAnswers-Forum-Archive</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-04-15</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/mtf-trading-strategies" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 mtf-trading-strategies</span>
+        <span class="lang">JavaScript</span>
+      </div>
+      <p class="desc">Multi-Timeframe Mean Reversion + Confluence Trading Strategies for TradingView Pine Script</p>
+      <div class="meta">⭐ 2026-04-14</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/asklivermore" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 asklivermore</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">AskLivermore Stock Pattern Scanner Dashboard - real-time stock scanners with FastAPI backend</p>
+      <div class="meta">⭐ 2026-04-12</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/Copytrader" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 Copytrader</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Auto copy-trading system for Hyperliquid and Polymarket</p>
+      <div class="meta">⭐ 2026-04-12</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/claude-wodify-skill" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 claude-wodify-skill</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Wodify gym management skill for Claude Code</p>
+      <div class="meta">⭐ 2026-04-11</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/pred-market-arb" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 pred-market-arb</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Prediction market arbitrage bot (Kalshi + Polymarket)</p>
+      <div class="meta">⭐ 2026-04-11</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/blaze-exit" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 blaze-exit</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Operation Blaze Exit — P&L, Revenue, CRM, and transition systems for CrossFit Blaze</p>
+      <div class="meta">⭐ 2026-04-11</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/hermes-email" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 hermes-email</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">Hermes Email - AI-powered email processing for CrossFit Blaze</p>
+      <div class="meta">⭐ 2026-03-31</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/lobbyhelp" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 lobbyhelp</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-30</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/karpathynize" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 karpathynize</span>
+        <span class="lang">Shell</span>
+      </div>
+      <p class="desc">Wire together production SaaS stacks from your terminal. A Claude Code skill that solves the Karpathy Problem — the 80% of dev time spent on service wiring, not code.</p>
+      <div class="meta">⭐ 2026-03-28</div>
+    </a>
+</div>
+    </section>
+
+    
+    <section class="group dormant">
+      <h2>🔴 Dormant <span class="count">(27)</span></h2>
+      <div class="grid">
+    <a href="https://github.com/Blazefit/challengeforge" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 challengeforge</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-28</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/hyperliquid-strategy" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 hyperliquid-strategy</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Exp108 momentum strategy — 20+ Sharpe, BTC/ETH/SOL, Hyperliquid</p>
+      <div class="meta">⭐ 2026-03-28</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/hermes" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 hermes</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Hermes — AI-powered email assistant for any business. Fetch, classify, draft, and auto-send email replies with brand voice.</p>
+      <div class="meta">⭐ 2026-03-27</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/flight-tracker" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 flight-tracker</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Spain Trip 2026 Flight Tracker</p>
+      <div class="meta">⭐ 2026-03-21</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/x-learn" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 x-learn</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">X-Learn (The X-Tractor) — Claude Code skill for extracting and learning from X/Twitter bookmarks and DM links</p>
+      <div class="meta">⭐ 2026-03-20</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/spain-trip-2026" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 spain-trip-2026</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Spain Trip Itinerary March 2026</p>
+      <div class="meta">⭐ 2026-03-20</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/trading-build" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 trading-build</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc">Autonomous AI Trading & Intelligence Business — Hermes + OpenClaw + Paperclip + MiroFish</p>
+      <div class="meta">⭐ 2026-03-20</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/blaze-health-dashboard" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 blaze-health-dashboard</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">Personal health intelligence dashboard - genomics, bloodwork, CGM, Garmin, training, supplements, AI reports</p>
+      <div class="meta">⭐ 2026-03-18</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/vault" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 vault</span>
+        <span class="lang">Shell</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-15</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/mydna" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 mydna</span>
+        <span class="lang">JavaScript</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-15</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/cashclaw" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 cashclaw</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">An autonomous agent that takes work, does work, gets paid, and gets better at it.</p>
+      <div class="meta">⭐ 2026-03-14</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/leadradar" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 leadradar</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">LeadRadar — Automated lead generation dashboard for TurnoverHQ</p>
+      <div class="meta">⭐ 2026-03-13</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/popvenue" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 popvenue</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">PopVenue Naples — The Airbnb of Short-Term Event & Pop-Up Spaces</p>
+      <div class="meta">⭐ 2026-03-12</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/Idea-ranker" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 Idea-ranker</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-12</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/claude-sync" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 claude-sync</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc">Sync Claude Code memory, plans, and session summaries across multiple machines via GitHub Gist</p>
+      <div class="meta">⭐ 2026-03-12</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/turnover-hq" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 turnover-hq</span>
+        <span class="lang">JavaScript</span>
+      </div>
+      <p class="desc">TurnoverHQ - Vacation Rental Turnover Manager for Naples, FL</p>
+      <div class="meta">⭐ 2026-03-11</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/hr-display" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 hr-display</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-03-11</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/blaze-token-dashboard" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 blaze-token-dashboard</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Token usage analytics and optimization dashboard</p>
+      <div class="meta">⭐ 2026-03-09</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/blaze-agent-memory" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 blaze-agent-memory</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc">OpenClaw agent memory backup</p>
+      <div class="meta">⭐ 2026-03-09</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/peptide-store" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 peptide-store</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Peptide Supply Co. — Storefront with inventory management, order tracking, and business analytics</p>
+      <div class="meta">⭐ 2026-03-05</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/openrouter-chat" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 openrouter-chat</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">AI chat app powered by OpenRouter — access multiple LLMs through one interface</p>
+      <div class="meta">⭐ 2026-03-03</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/skyhack-flights" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 skyhack-flights</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-02-26</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/skyhack" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 skyhack</span>
+        <span class="lang"></span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-02-26</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/crossfitblaze" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 crossfitblaze</span>
+        <span class="lang">Python</span>
+      </div>
+      <p class="desc"></p>
+      <div class="meta">⭐ 2026-02-24</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/seniors-crossfit-blaze" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 seniors-crossfit-blaze</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Landing page for CrossFit Blaze seniors program</p>
+      <div class="meta">⭐ 2026-02-06</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/mission-control" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🔐 mission-control</span>
+        <span class="lang">TypeScript</span>
+      </div>
+      <p class="desc">Mission Control - Task & Agent Orchestration Dashboard for CrossFit Blaze</p>
+      <div class="meta">⭐ 2026-02-06</div>
+    </a>
+
+
+    <a href="https://github.com/Blazefit/dashboard" target="_blank" class="card">
+      <div class="card-header">
+        <span class="repo-name">🌐 dashboard</span>
+        <span class="lang">HTML</span>
+      </div>
+      <p class="desc">Daneel Command Center - Project dashboard and Kanban board</p>
+      <div class="meta">⭐ 2026-02-05</div>
+    </a>
+</div>
+    </section>
+
+
+    <footer>
+      Auto-refreshed every Monday at 7 AM ET · <a href="https://github.com/Blazefit" target="_blank" style="color:var(--accent);">github.com/Blazefit</a>
+    </footer>
+  </div>
+</body>
+</html>
