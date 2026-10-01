@@ -1,0 +1,27 @@
+name: Guard — reject private repos on Pages
+
+# Safety net if the legacy daneelbrain generate.py (unfiltered) pushes again.
+# Fails the workflow when index.html contains the private lock emoji.
+
+on:
+  push:
+    branches: [main]
+    paths: ["index.html"]
+  pull_request:
+    paths: ["index.html"]
+
+permissions:
+  contents: read
+
+jobs:
+  no-private:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fail if private-repo markers present
+        run: |
+          if grep -nE 'repo-name">🔐' index.html; then
+            echo "::error::index.html lists private repos (🔐). Public Pages must be public-only."
+            exit 1
+          fi
+          echo "OK: no private-repo markers in index.html"
